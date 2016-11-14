@@ -230,7 +230,7 @@ class Model( Base ):
                             for pred_node, gt_node in zip( self._out_nodes_, self._gt_nodes_ ) ] )
         # user defined objective
         else:
-            loss_node = loss_func( self._out_nodes_, self._any_nodes_, gt_nodes )
+            loss_node = loss_func( self._out_nodes_, self._any_nodes_, self._gt_nodes_ )
             #loss_node = loss_func( self )
          
         # gradient
