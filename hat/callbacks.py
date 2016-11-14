@@ -147,8 +147,8 @@ class Validation( Callback ):
                                 for pred_node, gt_node in zip( self._md_.out_nodes_, self._md_.gt_nodes_ ) ] )
             # if user define their objective function
             elif isfunction( metric ):
-                #loss_node = metric( self._md_.out_nodes_, self._md_.any_nodes_, gt_nodes )
-                loss_node = metric( self._md_ )
+                loss_node = metric( self._md_.out_nodes_, self._md_.any_nodes_, self._md_.gt_nodes_ )
+                #loss_node = metric( self._md_ )
             # if node
             else:
                 loss_node = metric
